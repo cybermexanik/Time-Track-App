@@ -1,0 +1,29 @@
+.main-layout {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .main-content {
+    flex: 1;
+    background-color: var(--clr-secondary);
+    padding: 32px;
+    overflow-y: auto;
+  }
+  
+  .page-content {
+    margin-top: 20px;
+  }
+  
+  @media screen and (max-width: 1400px) {
+    .main-content {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .main-content {
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+  }

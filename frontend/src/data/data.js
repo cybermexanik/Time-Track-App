@@ -2,15 +2,15 @@ import { iconsImgs } from "../utils/images";
 import { personsImgs } from "../utils/images";
 
 export const navigationLinks = [
-    { id: 1, title: 'Главная', image: iconsImgs.home },
-    { id: 2, title: 'Сотрудники', image: iconsImgs.budget },
-    { id: 3, title: 'Учет рабочего времени', image: iconsImgs.plane },
-    { id: 4, title: 'Программы', image: iconsImgs.wallet },
-    { id: 5, title: 'Скриншоты', image: iconsImgs.bills },
-    { id: 6, title: 'Отчеты', image: iconsImgs.report },
-    { id: 7, title: 'Аккаунт', image: iconsImgs.user },
-    { id: 8, title: 'Настройки', image: iconsImgs.gears },
-    { id: 9, title: 'Выйти', image: iconsImgs.gears }
+    { id: 1, title: 'Главная', path:'/', image: iconsImgs.home },
+    { id: 2, title: 'Сотрудники', path:'/employees', image: iconsImgs.budget },
+    { id: 3, title: 'Учет активности', path:'/worktime', image: iconsImgs.plane },
+    { id: 4, title: 'Программы', path:'/applications', image: iconsImgs.wallet },
+    { id: 5, title: 'Скриншоты', path:'/screenshots', image: iconsImgs.bills },
+    { id: 6, title: 'Отчеты', path:'/reports', image: iconsImgs.report },
+    { id: 7, title: 'Аккаунт', path:'/profile', image: iconsImgs.user },
+    { id: 8, title: 'Настройки', path:'/settings', image: iconsImgs.gears },
+    { id: 9, title: 'Выйти', path:'/logout', image: iconsImgs.logout }
 ];
 
 export const transactions = [
