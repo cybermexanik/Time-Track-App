@@ -3,7 +3,7 @@
 }
 
 .home-content {
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     gap: 20px;
     margin-top: 20px;
@@ -21,4 +21,16 @@
 .home-card h2 {
     margin-top: 0;
     color: var(--clr-primary);
+}
+
+.content-grid-one {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+}
+
+.content-grid-two {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
 }

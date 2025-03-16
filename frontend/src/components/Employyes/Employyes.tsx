@@ -1,4 +1,4 @@
-import "./Transactions.css";
+import "./Employyes.css";
 import { transactions } from "../../data/data";
 import { iconsImgs } from "../../utils/images";
 import React from "react";
@@ -7,7 +7,7 @@ const Transactions = () => {
   return (
     <div className="grid-one-item grid-common grid-c2">
         <div className="grid-c-title">
-            <h3 className="grid-c-title-text">All Transactions</h3>
+            <h3 className="grid-c-title-text">Пользователи :</h3>
             <button className="grid-c-title-icon">
                 <img src={ iconsImgs.plus } />
             </button>
@@ -22,10 +22,10 @@ const Transactions = () => {
                                 <div className="avatar img-fit-cover">
                                     <img src={ transaction.image } alt="" />
                                 </div>
-                                <p className="text">{ transaction.name } <span>{ transaction.date }</span></p>
+                                <p className="text">{ transaction.name } <span>{ transaction.role }</span></p>
                             </div>
                             <div className="grid-item-r">
-                                <span className="text-scarlet">$ { transaction.amount }</span>
+                                <span>{ transaction.status }</span>
                             </div>
                         </div>
                     ))

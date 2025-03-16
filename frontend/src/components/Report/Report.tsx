@@ -7,10 +7,7 @@ const Report = () => {
   return (
     <div className="grid-one-item grid-common grid-c3">
         <div className="grid-c-title">
-            <h3 className="grid-c-title-text">Report</h3>
-            <button className="grid-c-title-icon">
-                <img src={ iconsImgs.plus } />
-            </button>
+            <h3 className="grid-c-title-text">Активность :</h3>
         </div>
         <div className="grid-c3-content">
             <div className="grid-chart">

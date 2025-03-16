@@ -18,22 +18,22 @@ export const transactions = [
         id: 11, 
         name: "Sarah Parker",
         image: personsImgs.person_four,
-        date: "23/12/04",
-        amount: 22000
+        role: "Отдел кадров",
+        status: "Online"
     },
     {
         id: 12, 
         name: "Krisitine Carter",
         image: personsImgs.person_three,
-        date: "23/07/21",
-        amount: 20000
+        role: "Разработчик",
+        status: "Offline"
     },
     {
         id: 13, 
         name: "Irene Doe",
         image: personsImgs.person_two,
-        date: "23/08/25",
-        amount: 30000
+        role: "Разработчик",
+        status: "Offline"
     }
 ];
 

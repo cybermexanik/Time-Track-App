@@ -1,12 +1,12 @@
 import "./ContentMain.css";
 import Cards from "../Cards/Cards.tsx";
-import Transactions from "../Transactions/Transactions.js";
+import Transactions from "../Employyes/Employyes.js";
 import Report from "../Report/Report.tsx";
 import Budget from "../Budget/Budget.tsx";
 import Subscriptions from "../Subscriptions/Subscriptions.js";
 import Savings from "../Savings/Savings.js";
 import Loans from "../Loans/Loans.js";
-import Financial from "../Financial/Financial.js";
+import Financial from "../Settings/Settings.js";
 import React from "react";
 
 const ContentMain = () => {

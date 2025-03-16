@@ -1,20 +1,22 @@
 import React from "react";
 import { FC } from "react";
 import "./HomePage.css";
+import Cards from "../../components/Cards/Cards";
+import Transactions from "../../components/Employyes/Employyes";
+import Report from "../../components/Report/Report";
+import Financial from "../../components/Settings/Settings";
+import Subscriptions from "../../components/Subscriptions/Subscriptions";
 
 const HomePage: FC = () => {
     return (
         <div className="home-page">
-            <h1>Добро пожаловать на главную страницу</h1>
-            <p>Это домашняя страница вашего приложения.</p>
             <div className="home-content">
-                <div className="home-card">
-                    <h2>Статистика</h2>
-                    <p>Здесь будет отображаться статистика</p>
+                <div className="content-grid-one">
+                    <Report />
+                    <Transactions />
                 </div>
-                <div className="home-card">
-                    <h2>Последние активности</h2>
-                    <p>Здесь будут отображаться последние активности</p>
+                <div className="content-grid-two">
+                    <Financial/>
                 </div>
             </div>
         </div>
