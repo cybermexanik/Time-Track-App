@@ -1,7 +1,7 @@
 import "./ContentMain.css";
 import Cards from "../Cards/Cards.tsx";
 import Transactions from "../Employyes/Employyes.js";
-import Report from "../Report/Report.tsx";
+import Report from "../Activity/Activity.tsx";
 import Budget from "../Budget/Budget.tsx";
 import Subscriptions from "../Subscriptions/Subscriptions.js";
 import Savings from "../Savings/Savings.js";

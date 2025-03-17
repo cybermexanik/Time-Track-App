@@ -3,7 +3,7 @@ import { FC } from "react";
 import "./HomePage.css";
 import Cards from "../../components/Cards/Cards";
 import Transactions from "../../components/Employyes/Employyes";
-import Report from "../../components/Report/Report";
+import Report from "../../components/Activity/Activity";
 import Financial from "../../components/Settings/Settings";
 import Subscriptions from "../../components/Subscriptions/Subscriptions";
 

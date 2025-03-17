@@ -1,9 +1,9 @@
 import { iconsImgs } from "../../utils/images";
-import "./Report.css";
+import "./Activity.css";
 import { reportData } from "../../data/data";
-import React from "react";
+import React, { FC } from "react";
 
-const Report = () => {
+const Activity: FC = () => {
   return (
     <div className="grid-one-item grid-common grid-c3">
         <div className="grid-c-title">
@@ -36,4 +36,4 @@ const Report = () => {
   )
 }
 
-export default Report
+export default Activity;

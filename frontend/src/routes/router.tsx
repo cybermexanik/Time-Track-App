@@ -7,7 +7,7 @@ import ProfilePage from '../pages/profile/ProfilePage';
 import SettingsPage from '../pages/settings/SettingPage';
 import WebsitesPage from '../pages/websites/WebsitePage';
 import ReportsPage from '../pages/reports/ReportPage';
-import MetricsPage from '../pages/performance-metrics/MetricsPage';
+import MetricsPage from '../pages/activity/WorkTimePage';
 import Register from '../pages/auth/Register';
 import Auth from '../pages/auth/Auth';
 
