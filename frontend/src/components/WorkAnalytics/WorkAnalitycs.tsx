@@ -69,7 +69,7 @@ const WorkAnalitycs: FC = () => {
                             className="analytics-area-target"
                             stroke='#ffc397'
                             fill='#ffc397'
-                            fillOpacity={0.3}
+                            fillOpacity={0.1}
                         />
                     </AreaChart>
                 </ResponsiveContainer>
