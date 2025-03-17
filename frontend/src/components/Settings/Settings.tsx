@@ -1,7 +1,7 @@
 import React from "react"
 import { iconsImgs } from "../../utils/images"
 
-const Financial = () => {
+const Settings = () => {
   return (
     <div className="subgrid-two-item grid-common grid-c8">
         <div className="grid-c-title">
@@ -15,4 +15,4 @@ const Financial = () => {
   )
 }
 
-export default Financial
+export default Settings;

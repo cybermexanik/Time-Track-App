@@ -36,7 +36,7 @@ const Sidebar: FC = () => {
           <div className="info-img img-fit-cover">
               <img src={ personsImgs.person_two } alt="profile image" />
           </div>
-          <span className="info-name">alice-doe</span>
+          <span className="info-name">Иван Иванов</span>
       </div>
 
       <nav className="navigation">

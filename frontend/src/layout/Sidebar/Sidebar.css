@@ -25,7 +25,6 @@
   .info-name {
     font-size: 20px;
     color: var(--clr-white);
-    text-transform: uppercase;
   }
   .navigation {
     margin-top: 28px;
