@@ -1,32 +1,38 @@
-import { Users } from "src/user/entities/user.entity";
-import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Users } from 'src/user/entities/user.entity'
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm'
 
 @Entity('performance_metrics')
 export class PerformanceMetrics {
-    @PrimaryGeneratedColumn()
-    id: number
+  @PrimaryGeneratedColumn()
+  id: number
 
-    @Column()
-    title: string
+  @Column()
+  title: string
 
-    @Column()
-    productive_time: number
+  @Column()
+  productive_time: number
 
-    @Column()
-    unproductive_time: number
+  @Column()
+  unproductive_time: number
 
-    @Column()
-    idle_time: number
+  @Column()
+  idle_time: number
 
-    @ManyToOne(() => Users, (user) => user.perfomance_metrics)
-    @JoinColumn({name:'user_id'})
-    user: Users
+  @ManyToOne(() => Users, (user) => user.perfomance_metrics)
+  @JoinColumn({ name: 'user_id' })
+  user: Users
 
-    
+  @CreateDateColumn()
+  createdAt: Date
 
-    @CreateDateColumn()
-    createdAt: Date
-
-    @UpdateDateColumn()
-    updatedAt: Date
+  @UpdateDateColumn()
+  updatedAt: Date
 }

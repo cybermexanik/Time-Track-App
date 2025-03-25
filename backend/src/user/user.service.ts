@@ -1,26 +1,27 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Users } from './entities/user.entity';
-import { Repository } from 'typeorm';
-import * as argon2 from 'argon2';
-import { JwtService } from '@nestjs/jwt';
+import { BadRequestException, Injectable } from '@nestjs/common'
+import { CreateUserDto } from './dto/create-user.dto'
+import { UpdateUserDto } from './dto/update-user.dto'
+import { InjectRepository } from '@nestjs/typeorm'
+import { Users } from './entities/user.entity'
+import { Repository } from 'typeorm'
+import * as argon2 from 'argon2'
+import { JwtService } from '@nestjs/jwt'
 
 @Injectable()
 export class UserService {
   constructor(
     @InjectRepository(Users) private readonly userRepository: Repository<Users>,
     private readonly jwtService: JwtService,
-  ){}
+  ) {}
 
   async create(createUserDto: CreateUserDto) {
     const currentUser = await this.userRepository.findOne({
       where: {
         email: createUserDto.email,
-      }
+      },
     })
-    if(currentUser) throw new BadRequestException('Такой пользователь уже существует')
+    if (currentUser)
+      throw new BadRequestException('Такой пользователь уже существует')
 
     const user = await this.userRepository.save({
       email: createUserDto.email,
@@ -28,31 +29,31 @@ export class UserService {
       surname: createUserDto.surname,
       name: createUserDto.name,
       middlename: createUserDto.middlename,
-      role: createUserDto.role
+      role: createUserDto.role,
     })
 
-    const token = this.jwtService.sign({email: createUserDto.email})
+    const token = this.jwtService.sign({ email: createUserDto.email })
 
-    return { user, token };
+    return { user, token }
   }
 
   findAll() {
-    return `This action returns all user`;
+    return `This action returns all user`
   }
 
-  async findOne(email: string){
+  async findOne(email: string) {
     return await this.userRepository.findOne({
       where: {
         email,
-      }
+      },
     })
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+    return `This action updates a #${id} user`
   }
 
   remove(id: number) {
-    return `This action removes a #${id} user`;
+    return `This action removes a #${id} user`
   }
 }

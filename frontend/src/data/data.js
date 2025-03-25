@@ -5,12 +5,10 @@ export const navigationLinks = [
     { id: 1, title: 'Главная', path:'/', image: iconsImgs.home },
     { id: 2, title: 'Сотрудники', path:'/employees', image: iconsImgs.budget },
     { id: 3, title: 'Учет активности', path:'/worktime', image: iconsImgs.plane },
-    { id: 4, title: 'Программы', path:'/applications', image: iconsImgs.wallet },
-    { id: 5, title: 'Скриншоты', path:'/screenshots', image: iconsImgs.bills },
-    { id: 6, title: 'Отчеты', path:'/reports', image: iconsImgs.report },
-    { id: 7, title: 'Аккаунт', path:'/profile', image: iconsImgs.user },
-    { id: 8, title: 'Настройки', path:'/settings', image: iconsImgs.gears },
-    { id: 9, title: 'Выйти', path:'/logout', image: iconsImgs.logout }
+    { id: 4, title: 'Мониторинг', path:'/websites', image: iconsImgs.wallet },
+    { id: 5, title: 'Отчеты', path:'/reports', image: iconsImgs.report },
+    { id: 6, title: 'Настройки', path:'/settings', image: iconsImgs.gears },
+    { id: 7, title: 'Выйти', path:'/logout', image: iconsImgs.logout }
 ];
 
 export const transactions = [
@@ -34,7 +32,21 @@ export const transactions = [
         image: personsImgs.person_two,
         role: "Разработчик",
         status: "Offline"
-    }
+    },
+    {
+        id: 11,
+        name: "Sarah Parker",
+        image: personsImgs.person_four,
+        role: "Отдел кадров",
+        status: "Online"
+    },
+    {
+        id: 12,
+        name: "Krisitine Carter",
+        image: personsImgs.person_three,
+        role: "Разработчик",
+        status: "Offline"
+    },
 ];
 
 export const reportData = [

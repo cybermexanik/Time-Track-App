@@ -1,6 +1,7 @@
-import React, { createContext, useReducer } from "react";
+import * as React from "react";
 import reducer from "../reducer/sidebarReducer";
 import PropTypes from 'prop-types';
+import {createContext, useReducer} from "react";
 
 const initialState = {
     isSidebarOpen: false

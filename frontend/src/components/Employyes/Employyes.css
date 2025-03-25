@@ -38,3 +38,23 @@
 .grid-c2 .grid-item-r span {
   font-weight: 500;
 }
+
+
+.users-scroll-container {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+.users-scroll-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.users-scroll-container::-webkit-scrollbar-thumb {
+  background-color: #4B5563;
+  border-radius: 4px;
+}
+
+.users-scroll-container::-webkit-scrollbar-track {
+  background: rgba(31, 41, 55, 0.3);
+}
+
