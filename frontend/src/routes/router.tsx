@@ -7,9 +7,10 @@ import ProfilePage from '../pages/profile/ProfilePage';
 import SettingsPage from '../pages/settings/SettingPage';
 import WebsitesPage from '../pages/websites/WebsitePage';
 import ReportsPage from '../pages/reports/ReportPage';
-import MetricsPage from '../pages/activity/WorkTimePage';
+import MetricsPage from '../pages/activity/ActivityPage';
 import Register from '../pages/auth/Register';
 import Auth from '../pages/auth/Auth';
+import EmployyesPage from '../pages/employyes/EmployyesPage';
 
 export const router = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ export const router = createBrowserRouter([
       { index: true, element: <HomePage /> }, 
       { path: 'profile', element: <ProfilePage /> }, 
       { path: 'settings', element: <SettingsPage /> },
-      { path: 'employees', element: <WebsitesPage /> },
+      { path: 'employees', element: <EmployyesPage /> },
       { path: 'worktime', element: <MetricsPage /> },
       { path: 'applications', element: <HomePage /> },
       { path: 'screenshots', element: <HomePage /> },
