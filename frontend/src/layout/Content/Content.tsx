@@ -1,7 +1,7 @@
 import "./Content.css";
-import ContentTop from '../../components/ContentTop/ContentTop.tsx';
-import ContentMain from '../../components/ContentMain/ContentMain.tsx';
-import React from "react";
+import ContentTop from '../../components/ContentTop/ContentTop';
+import ContentMain from '../../components/ContentMain/ContentMain';
+import * as React from "react";
 import { Outlet } from "react-router-dom";
 
 const Content = () => {

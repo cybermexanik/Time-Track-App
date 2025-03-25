@@ -1,0 +1,21 @@
+.product-container {
+    background-color: #302924;
+    backdrop-filter: blur(12px);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+}
+
+.product-header {
+    margin-bottom: 1.5rem;
+}
+
+.product-title{
+    font-weight: 400;
+    font-size: 20px;
+    color: #8a8587;
+}
+
+.product-chart-container {
+    width: 100%;
+    height: 300px;
+}

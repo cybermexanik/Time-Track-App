@@ -1,0 +1,55 @@
+.users-table-container {
+    height: 400px;
+    background-color: #302924;
+    backdrop-filter: blur(12px);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    overflow: auto;
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.add-btn {
+    background-color: #fe6c00;
+    color: white;
+    border: none;
+}
+
+.user-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.user-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+.user-email {
+    color: #ddd;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.change-btn {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+}
+
+.delete-btn {
+    background-color: firebrick;
+    color: white;
+    border: none;
+}

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import * as React from "react";
 import { motion } from "framer-motion";
 import { Area, AreaChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import { FC } from "react";
+import {FC, useState} from "react";
 import './WorkAnalytics.css';
 
 const revenueData = [
@@ -30,7 +30,7 @@ const WorkAnalitycs: FC = () => {
             transition={{delay:0.2}}
         >
             <div className='analytics-header'>
-                <h2 className='analytics-title'>Активность :</h2>
+                <h2 className='analytics-title'>Итоговая активность :</h2>
                 <select
                     className='analytics-select'
                     value={selectedTimeRange}

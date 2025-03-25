@@ -1,7 +1,8 @@
 import { iconsImgs } from "../../utils/images";
 import "./Activity.css";
+import * as React from "react";
 import { reportData } from "../../data/data";
-import React, { FC } from "react";
+import {FC} from "react";
 
 const Activity: FC = () => {
   return (

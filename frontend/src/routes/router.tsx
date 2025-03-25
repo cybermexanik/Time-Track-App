@@ -1,16 +1,16 @@
 import MainLayout from '../layout/MainLayout';
-import React from 'react';
+import * as React from "react";
 import ErrorPage from '../pages/error-page/ErrorPage';
 import { createBrowserRouter } from 'react-router-dom';
 import HomePage from '../pages/home/HomePage';
 import ProfilePage from '../pages/profile/ProfilePage';
-import SettingsPage from '../pages/settings/SettingPage';
+import SettingsPage from '../pages/settings/SettingsPage';
 import WebsitesPage from '../pages/websites/WebsitePage';
 import ReportsPage from '../pages/reports/ReportPage';
 import MetricsPage from '../pages/activity/ActivityPage';
 import Register from '../pages/auth/Register';
 import Auth from '../pages/auth/Auth';
-import EmployyesPage from '../pages/employyes/EmployyesPage';
+import EmployyesPage from "../pages/employyes/EmployyesPage";
 
 export const router = createBrowserRouter([
   {
@@ -18,8 +18,7 @@ export const router = createBrowserRouter([
     element: <MainLayout />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <HomePage /> }, 
-      { path: 'profile', element: <ProfilePage /> }, 
+      { index: true, element: <HomePage /> },
       { path: 'settings', element: <SettingsPage /> },
       { path: 'employees', element: <EmployyesPage /> },
       { path: 'worktime', element: <MetricsPage /> },

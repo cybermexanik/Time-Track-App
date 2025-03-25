@@ -1,19 +1,16 @@
-import React from "react";
+import * as React from "react";
 import { FC } from "react";
 import "./HomePage.css";
-import Cards from "../../components/Cards/Cards";
-import Transactions from "../../components/Employyes/Employyes";
-import Report from "../../components/Activity/Activity";
+import Users from "../../components/Employyes/Employyes";
 import Financial from "../../components/Settings/Settings";
-import Subscriptions from "../../components/Subscriptions/Subscriptions";
-import WorkAnalitycs from "../../components/WorkAnalytics/WorkAnalitycs";
+import WorkAnalitycs from "../../components/Activity/WorkAnalitycs";
 
 const HomePage: FC = () => {
     return (
         <div className="home-page">
             <div className="home-content">
                 <div className="content-grid-one">
-                    <Transactions />
+                    <Users />
                     <Financial/>
                 </div>
                 <div className="content-grid-two">

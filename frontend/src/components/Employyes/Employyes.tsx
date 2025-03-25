@@ -1,9 +1,10 @@
 import "./Employyes.css";
 import { transactions } from "../../data/data";
 import { iconsImgs } from "../../utils/images";
-import React from "react";
+import * as React from "react";
+import {FC} from "react";
 
-const Transactions = () => {
+const Users: FC = () => {
   return (
     <div className="grid-one-item grid-common grid-c2">
         <div className="grid-c-title">
@@ -15,6 +16,7 @@ const Transactions = () => {
 
         <div className="grid-content">
             <div className="grid-items">
+                <div className="users-scroll-container">
                 {
                     transactions.map((transaction) => (
                         <div className="grid-item" key = { transaction.id }>
@@ -30,10 +32,11 @@ const Transactions = () => {
                         </div>
                     ))
                 }
+                </div>
             </div>
         </div>
     </div>
   )
 }
 
-export default Transactions
+export default Users

@@ -1,22 +1,34 @@
-import { Users } from "src/user/entities/user.entity";
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, Timestamp } from "typeorm";
+import { Users } from 'src/user/entities/user.entity'
+import { Website } from 'src/websites/entities/website.entity'
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm'
 
-@Entity()
+@Entity('sessions')
 export class Session {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number
 
-    @Column()
-    start_time: Date
+  @Column({ type: 'timestamp' })
+  start_time: Date
 
-    @Column()
-    end_time: Date
+  @Column({ type: 'timestamp', nullable: true })
+  end_time: Date
 
-    @Column()
-    total_duration: number
+  @Column({ type: 'interval', nullable: true })
+  total_duration: number
 
-    @ManyToOne(() => Users, (user) => user.sessions, {
-        onDelete: 'CASCADE'
-    })
-    user: Users;
+  @ManyToOne(() => Users, (user) => user.sessions, {
+    onDelete: 'CASCADE',
+  })
+  user: Users
+
+  @OneToMany(() => Website, (website) => website.session, {
+    cascade: true,
+  })
+  websites: Website[]
 }
