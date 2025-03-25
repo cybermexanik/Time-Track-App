@@ -133,7 +133,6 @@ const UsersTable = () => {
                    open={isModalOpen} onCancel={handleCancel} onOk={handleOk}>
                 <Form form={form} layout="vertical">
                     <Form.Item name="first" label="Имя" rules={[{ required: true, message: "Введите имя" }]}>
-                        <Input />
                     </Form.Item>
                     <Form.Item name="last" label="Фамилия" rules={[{ required: true, message: "Введите фамилию" }]}>
                         <Input />

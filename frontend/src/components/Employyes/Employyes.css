@@ -12,7 +12,7 @@
   margin-bottom: 0;
 }
 .grid-c2 .grid-item p {
-  color: var(--clr-silver-v1);
+  color: white;
 }
 .grid-c2 .grid-item-l .avatar {
   width: 40px;
@@ -33,7 +33,7 @@
   font-weight: 400;
   margin-top: 4px;
   font-size: 15px;
-  color: #8a8587;
+  color: white;
 }
 .grid-c2 .grid-item-r span {
   font-weight: 500;
