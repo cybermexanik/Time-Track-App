@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable } from '@nestjs/common'
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
 import { CreateUserDto } from './dto/create-user.dto'
 import { UpdateUserDto } from './dto/update-user.dto'
 import { InjectRepository } from '@nestjs/typeorm'
@@ -29,7 +29,6 @@ export class UserService {
       surname: createUserDto.surname,
       name: createUserDto.name,
       middlename: createUserDto.middlename,
-      role: createUserDto.role,
     })
 
     const token = this.jwtService.sign({ email: createUserDto.email })
@@ -37,8 +36,12 @@ export class UserService {
     return { user, token }
   }
 
-  findAll() {
-    return `This action returns all user`
+  async findAll(): Promise<Omit<Users, 'password'>[]> {
+    const users = await this.userRepository.find();
+    return users.map((user) => {
+      const { password, ...result } = user;
+      return result;
+    });
   }
 
   async findOne(email: string) {
@@ -49,11 +52,30 @@ export class UserService {
     })
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`
+  async findById(id: number): Promise<Users> {
+    const user = await this.userRepository.findOne({
+      where: { id },
+      relations: ['role'],
+    });
+    if (!user) {
+      throw new NotFoundException(`Пользователь с ID ${id} не найден`);
+    }
+    return user;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`
+  async update(id: number, updateUserDto: UpdateUserDto): Promise<Users> {
+    const user = await this.findById(id);
+  
+    user.name = updateUserDto.name ?? user.name;
+    user.surname = updateUserDto.surname ?? user.surname;
+    user.email = updateUserDto.email ?? user.email;
+  
+    try {
+      await this.userRepository.save(user);
+      return user;
+    } catch (error) {
+      console.error('Error updating user:', error);
+      throw new BadRequestException('Не удалось обновить профиль');
+    }
   }
 }

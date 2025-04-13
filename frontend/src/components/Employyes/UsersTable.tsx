@@ -4,30 +4,11 @@ import {Avatar, Button, Divider, Form, Input, List, Modal, Skeleton} from 'antd'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import './UsersTable.css';
 
-
-interface DataType {
-    id: string;
-    gender: string;
-    name: {
-        title: string;
-        first: string;
-        last: string;
-    };
-    email: string;
-    picture: {
-        large: string;
-        medium: string;
-        thumbnail: string;
-    };
-    nat: string;
-    role: string;
-}
-
 const UsersTable = () => {
     const [loading, setLoading] = useState(false);
-    const [data, setData] = useState<DataType[]>([]);
+    const [data, setData] = useState<UserData[]>([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [editUser, setEditUser] = useState<DataType | null>(null);
+    const [editUser, setEditUser] = useState<UserData | null>(null);
     const [form] = Form.useForm();
 
     const loadMoreData = () => {
@@ -35,10 +16,10 @@ const UsersTable = () => {
             return;
         }
         setLoading(true);
-        fetch('https://randomuser.me/api/?results=10&inc=name,gender,email,nat,picture&noinfo')
+        fetch('http://localhost:3000/api/user')
             .then((res) => res.json())
             .then((body) => {
-                setData([...data, ...body.results]);
+                setData([...data, ...body]);
                 setLoading(false);
             })
             .catch(() => {
@@ -51,12 +32,12 @@ const UsersTable = () => {
     }, []);
 
 
-    const showModal = (user?: DataType) => {
+    const showModal = (user?: UserData) => {
         if (user) {
             setEditUser(user);
             form.setFieldsValue({
-                first: user.name.first,
-                last: user.name.last,
+                first: user.name,
+                last: user.surname,
                 email: user.email
             });
         } else {
@@ -75,17 +56,23 @@ const UsersTable = () => {
         form.validateFields().then((values) => {
             if (editUser) {
                 setData(data.map(user =>
-                    user.email === editUser.email ? { ...user, name: { ...user.name, ...values }, email: values.email } : user
+                    user.email === editUser.email
+                        ? {
+                            ...user,
+                            name: values.first,
+                            surname: values.last,
+                            email: values.email
+                        }
+                        : user
                 ));
             } else {
-                const newUser: DataType = {
-                    id: Date.now().toString(),
-                    gender: "unknown",
-                    name: { title: "", first: values.first, last: values.last },
+                const newUser: UserData = {
+                    id: Date.now(),
+                    name: values.first,
+                    surname: values.last,
+                    middlename: "",
                     email: values.email,
-                    picture: { large: "", medium: "", thumbnail: "" },
-                    nat: "N/A",
-                    role:"Разработчик"
+                    // avatarUrl: "https://placehold.co/64x64"
                 };
                 setData([...data, newUser]);
             }
@@ -116,8 +103,8 @@ const UsersTable = () => {
                     renderItem={(item) => (
                         <List.Item key={item.email} className="user-item">
                             <List.Item.Meta
-                                avatar={<Avatar src={item.picture.large} />}
-                                title={<span className="user-name">{`${item.name.first} ${item.name.last} (${item.role})`}</span>}
+                                // avatar={<Avatar src={item.avatarUrl} />}
+                                title={<span className="user-name">{`${item.name} ${item.surname}`}</span>}
                                 description={<span className="user-email">{item.email}</span>}
                             />
                             <div className="buttons">
@@ -133,6 +120,7 @@ const UsersTable = () => {
                    open={isModalOpen} onCancel={handleCancel} onOk={handleOk}>
                 <Form form={form} layout="vertical">
                     <Form.Item name="first" label="Имя" rules={[{ required: true, message: "Введите имя" }]}>
+                        <Input />
                     </Form.Item>
                     <Form.Item name="last" label="Фамилия" rules={[{ required: true, message: "Введите фамилию" }]}>
                         <Input />

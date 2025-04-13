@@ -39,7 +39,6 @@
   font-weight: 500;
 }
 
-
 .users-scroll-container {
   max-height: 200px;
   overflow-y: auto;
@@ -58,3 +57,23 @@
   background: rgba(31, 41, 55, 0.3);
 }
 
+.user-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-online {
+  background-color: #4caf50;
+}
+
+.status-offline {
+  background-color: #f44336;
+}

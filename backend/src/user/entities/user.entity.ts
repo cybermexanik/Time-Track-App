@@ -4,10 +4,12 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm'
+import { Role } from '/Users/jesuspiece/Time-Track-App/backend/src/roles/entities/role.entity'
 
 @Entity('users')
 export class Users {
@@ -29,17 +31,29 @@ export class Users {
   @Column()
   middlename: string
 
-  @Column()
-  role: string
+  @Column({ nullable: true })
+  avatar_url?: string
+
+  @Column({ nullable: true })
+  status?: string
+
+  @ManyToOne(
+    () => Role,
+    (role) => role.users,
+    {
+      onDelete: 'CASCADE',
+    },
+  )
+  role: Role
 
   @OneToMany(
     () => PerformanceMetrics,
     (performance_metrics) => performance_metrics.user,
     {
-      onDelete: 'CASCADE',
+      onDelete:'CASCADE',
     },
   )
-  perfomance_metrics: PerformanceMetrics[]
+  performance_metrics: PerformanceMetrics[]
 
   @OneToMany(() => Session, (session) => session.user, {
     onDelete: 'CASCADE',

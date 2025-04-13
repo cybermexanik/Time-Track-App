@@ -1,13 +1,13 @@
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { motion } from "framer-motion";
 import './ProductPerformance.css'
+import React from "react";
 
 const productPerformanceData = [
-    { name: "Product A", sales: 4000, revenue: 2400, profit: 2400 },
-    { name: "Product B", sales: 3000, revenue: 1398, profit: 2210 },
-    { name: "Product C", sales: 2000, revenue: 9800, profit: 2290 },
-    { name: "Product D", sales: 2780, revenue: 3908, profit: 2000 },
-    { name: "Product E", sales: 1890, revenue: 4800, profit: 2181 },
+    { name: "Отдел кадров", Работа: 4000, Процесс: 2400, Профит: 2400 },
+    { name: "Отдел разработки", Работа: 3000, Процесс: 1398, Профит: 2210 },
+    { name: "Администрация", Работа: 2000, Процесс: 9800, Профит: 2290 },
+    { name: "Сотрудники", Работа: 2780, Процесс: 3908, Профит: 2000 },
 ];
 
 const ProductPerformance = () => {
@@ -35,9 +35,9 @@ const ProductPerformance = () => {
                             itemStyle={{ color: "#E5E7EB" }}
                         />
                         <Legend />
-                        <Bar dataKey='sales' fill='#8B5CF6' />
-                        <Bar dataKey='revenue' fill='#10B981' />
-                        <Bar dataKey='profit' fill='#F59E0B' />
+                        <Bar dataKey='Работа' fill='#8B5CF6' />
+                        <Bar dataKey='Процесс' fill='#10B981' />
+                        <Bar dataKey='Профит' fill='#F59E0B' />
                     </BarChart>
                 </ResponsiveContainer>
             </div>

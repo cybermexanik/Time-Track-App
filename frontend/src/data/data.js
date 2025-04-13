@@ -8,7 +8,7 @@ export const navigationLinks = [
     { id: 4, title: 'Мониторинг', path:'/websites', image: iconsImgs.wallet },
     { id: 5, title: 'Отчеты', path:'/reports', image: iconsImgs.report },
     { id: 6, title: 'Настройки', path:'/settings', image: iconsImgs.gears },
-    { id: 7, title: 'Выйти', path:'/logout', image: iconsImgs.logout }
+    { id: 7, title: 'Выйти', path:'/auth', image: iconsImgs.logout }
 ];
 
 export const transactions = [
@@ -34,14 +34,14 @@ export const transactions = [
         status: "Offline"
     },
     {
-        id: 11,
+        id: 14,
         name: "Sarah Parker",
         image: personsImgs.person_four,
         role: "Отдел кадров",
         status: "Online"
     },
     {
-        id: 12,
+        id: 15,
         name: "Krisitine Carter",
         image: personsImgs.person_three,
         role: "Разработчик",
@@ -141,7 +141,7 @@ export const savings = [
         id: 27,
         image: personsImgs.person_one,
         saving_amount: 250000,
-        title: "Pay kid bro’s fees",
+        title: "Pay kid bro's fees",
         date_taken: "23/12/22",
         amount_left: 40000
     }

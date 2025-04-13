@@ -14,6 +14,10 @@ import { Auth } from './auth/entities/auth.entity'
 import { Session } from './sessions/entities/session.entity'
 import { WebsitesModule } from './websites/websites.module'
 import { Website } from './websites/entities/website.entity'
+import { ComponentModule } from './search/component.module'
+import { Role } from './roles/entities/role.entity'
+import { RoleModule } from './roles/role.module'
+
 
 @Module({
   imports: [
@@ -30,14 +34,17 @@ import { Website } from './websites/entities/website.entity'
         username: configService.get('DB_USER'),
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
-        synchronize: false,
-        entities: [Users, PerformanceMetrics, Auth, Session, Website],
+        synchronize: true,
+        entities: [Users, PerformanceMetrics, Auth, Session, Website, Role],
       }),
       inject: [ConfigService],
     }),
     SessionsModule,
     UserModule,
     WebsitesModule,
+    UserModule,
+    ComponentModule,
+    RoleModule
   ],
 
   controllers: [AppController],

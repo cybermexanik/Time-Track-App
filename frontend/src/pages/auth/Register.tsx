@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import './Auth.css';
 
 const Register = () => {
@@ -12,6 +12,8 @@ const Register = () => {
     confirmPassword: ''
   });
 
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -19,10 +21,44 @@ const Register = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Здесь будет логика регистрации
+
     console.log('Register attempt:', formData);
+
+    if (formData.password !== formData.confirmPassword) {
+      console.error("Пароли не совпадают");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:3000/api/user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+          name: formData.name,
+          surname: formData.surname,
+          middlename: formData.middlename,
+        }),
+      });
+
+      if (response.ok) {
+        console.log('Registration successful for email:', formData.email);
+        navigate('/auth'); // Redirect to /auth on successful registration
+      } else {
+        const errorData = await response.json();
+        console.error('Registration failed:', errorData);
+        // Optionally display an error message to the user
+      }
+    } catch (error) {
+      console.error('Error during registration:', error);
+      // Optionally display an error message to the user
+    }
   };
 
   return (
@@ -32,11 +68,11 @@ const Register = () => {
           <h2>Регистрация</h2>
           <p className="text-silver-v1">Создайте новый аккаунт</p>
         </div>
-        
+
         <form className="auth-form" onSubmit={handleSubmit}>
 
         <div className="form-group">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Почта</label>
             <input
               type="email"
               id="email"
@@ -83,8 +119,8 @@ const Register = () => {
               required
             />
           </div>
-        
-          
+
+
           <div className="form-group">
             <label htmlFor="password">Пароль</label>
             <input
@@ -96,7 +132,7 @@ const Register = () => {
               required
             />
           </div>
-          
+
           <div className="form-group">
             <label htmlFor="confirmPassword">Подтвердите пароль</label>
             <input
@@ -108,10 +144,12 @@ const Register = () => {
               required
             />
           </div>
-          
-          <button type="submit" className="auth-button">Зарегистрироваться</button>
+
+          <button type="submit" className="auth-button">
+            Зарегистрироваться
+          </button>
         </form>
-        
+
         <div className="auth-footer">
           <p>Уже есть аккаунт? <Link to="/auth" className="auth-link">Войти</Link></p>
         </div>

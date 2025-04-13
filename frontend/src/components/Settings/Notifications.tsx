@@ -2,6 +2,7 @@ import { useState } from "react";
 import SettingSection from "./SettingSection";
 import { Bell } from "lucide-react";
 import ToggleSwitch from "./ToggleSwitch";
+import React from "react";
 
 const Notifications = () => {
     const [notifications, setNotifications] = useState({

@@ -26,7 +26,7 @@ export class PerformanceMetrics {
   @Column()
   idle_time: number
 
-  @ManyToOne(() => Users, (user) => user.perfomance_metrics)
+  @ManyToOne(() => Users, (user) => user.performance_metrics)
   @JoinColumn({ name: 'user_id' })
   user: Users
 
