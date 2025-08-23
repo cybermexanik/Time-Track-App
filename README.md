@@ -36,8 +36,8 @@
 1. Клонируйте проект (фронт и бэк могут быть в одном монорепозитории или отдельных):
 
    ```bash
-   git clone https://github.com/yourusername/employee-activity-tracker.git
-   cd employee-activity-tracker
+   git clone https://github.com/cybermexanik/Time-Track-App
+   cd Time-Track-App
 
 2. Отредактируйте .env файлы (если необходимо) — для настройки портов, базы данных и секретов.
 
